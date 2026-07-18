@@ -112,7 +112,7 @@ export const visualPresets = {
 
 export const visualSystem = {
   productKind: slot4BrandConfig.productKind,
-  recommendedPreset: 'tech-directory',
+  recommendedPreset: 'luxury-atelier',
   radius: {
     sm: '0.75rem',
     md: '1.25rem',

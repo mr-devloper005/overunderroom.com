@@ -66,7 +66,7 @@ export const pagesContent = {
       },
       {
         title: 'Connected content surfaces',
-        description: 'Articles, visual posts, listings, resources, and profiles stay connected so discovery feels natural across the site.',
+        description: 'Articles, visual posts, listings, and resources stay connected so discovery feels natural across the site.',
       },
       {
         title: 'Simple and trustworthy',
