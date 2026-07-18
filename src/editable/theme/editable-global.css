@@ -12,7 +12,7 @@
   Do not add data fetching, scripts, or route logic here.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap');
 
 /* Per-task display + body typefaces (consumed via task-themes.ts). */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
@@ -25,12 +25,26 @@ body {
 }
 
 .editable-site-root {
-  /* Yelp-style clean sans, used for both display and body. */
-  --editable-font-display: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --editable-font-body: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --editable-font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --editable-font-body: 'Manrope', system-ui, -apple-system, sans-serif;
   /* Premium easing curve used across every hover + transition. */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: var(--editable-font-body);
+  color-scheme: dark;
+}
+
+.editable-site-root input,
+.editable-site-root textarea,
+.editable-site-root select {
+  caret-color: var(--slot4-accent-fill);
+}
+
+.editable-site-root input:-webkit-autofill,
+.editable-site-root input:-webkit-autofill:hover,
+.editable-site-root input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--slot4-page-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--slot4-surface-bg) inset;
+  transition: background-color 9999s ease-out;
 }
 
 /*
@@ -83,7 +97,7 @@ body {
 .editable-site-root h4,
 .editable-display {
   font-family: var(--editable-font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
 }
 
 .editable-site-root p,
@@ -120,4 +134,69 @@ body {
 
 .article-content a {
   color: var(--slot4-accent-fill);
+}
+
+.editorial-grid {
+  background-image: repeating-linear-gradient(90deg, transparent 0, transparent calc(7.142857% - 1px), rgba(242, 241, 235, 0.075) calc(7.142857% - 1px), rgba(242, 241, 235, 0.075) 7.142857%);
+}
+
+.editorial-kicker {
+  font-family: var(--editable-font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--slot4-muted-text);
+}
+
+.editorial-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--editable-border-strong);
+  padding: 0.55rem 0.9rem;
+  font-family: var(--editable-font-body);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: background-color 250ms, border-color 250ms, color 250ms;
+}
+
+.editorial-chip:hover {
+  border-color: var(--slot4-accent-fill);
+  background: var(--slot4-accent-fill);
+  color: #11130d;
+}
+
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  font-family: var(--editable-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slot4-page-text);
+}
+
+.editorial-link:hover {
+  color: var(--slot4-accent-fill);
+}
+
+.article-content {
+  color: var(--slot4-page-text);
+}
+
+.article-content p,
+.article-content li {
+  color: var(--slot4-muted-text);
+}
+
+@media (max-width: 767px) {
+  .editorial-grid {
+    background-size: 25% 100%;
+  }
 }
