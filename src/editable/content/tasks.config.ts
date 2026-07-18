@@ -4,7 +4,7 @@ export const slot4TaskSupport = {
   article: false,
   classified: false,
   sbm: true,
-  profile: true,
+  profile: false,
   pdf: false,
   listing: false,
   image: false,
